@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Create Tags{% endblock %}
+
+{% block content %}
+
+<h1>Create Tags</h1>
+
+<ul>
+    {% for tag in tags %}
+    <li><a href="/tags/{{tag.id}}/edit">{{tag.name}}</a></li>
+    {% endfor %}
+</ul>
+
+<form class="form" method="POST">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" name="name" placeholder="Enter a tag"></input>
+    </div>
+
+    <button class="btn btn-primary">Add</button>
+</form>
+
+<a href="/users"><button class="btn btn-success mt-1" name="back_button">Go home</button></a>
+
+{% endblock %}
